@@ -5,21 +5,20 @@
  */
 package GUICmp;
 
-import EmployeeData.EmployeeData;
+import EmployeeData.employeeDirectory;
 
 /**
  *
  * @author Shalini Shree
  */
 public class MainJFrame extends javax.swing.JFrame {
-EmployeeData employeedata;
+employeeDirectory directory;
     /**
      * Creates new form MainJFrame
      */
     public MainJFrame() {
         initComponents();
-        employeedata = new EmployeeData();
-       
+        directory = new employeeDirectory();
     }
 
     /**
@@ -114,14 +113,14 @@ EmployeeData employeedata;
     private void BtnCreateEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCreateEmployeeActionPerformed
         // TODO add your handling code here:
         
-       CreateJPanel createpanel = new CreateJPanel(employeedata);
+       CreateJPanel createpanel = new CreateJPanel(directory);
        SplitPane.setRightComponent(createpanel);
     }//GEN-LAST:event_BtnCreateEmployeeActionPerformed
 
     private void BtnDisplayEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDisplayEmployeeActionPerformed
         // TODO add your handling code here:
         
-        ReadJPanel displaypanel = new ReadJPanel(employeedata);
+        ReadJPanel displaypanel = new ReadJPanel(directory);
         SplitPane.setRightComponent(displaypanel);
     }//GEN-LAST:event_BtnDisplayEmployeeActionPerformed
 
