@@ -5,6 +5,7 @@
  */
 package EmployeeData;
 
+import java.util.Date;
 import javax.swing.ImageIcon;
 
 /**
@@ -17,7 +18,7 @@ public class EmployeeData {
     private String employeeID;
     private String employeeAge;
     private String gender;
-    private String startdate;
+    private Date startdate;
     private String employeelevel;
     private String teaminfo;
     private String telephone;
@@ -67,11 +68,11 @@ public class EmployeeData {
         this.gender = gender;
     }
     
-    public String getstartdate() {
+    public Date getstartdate() {
         return startdate;
     }
 
-    public void setstartdate(String startdate) {
+    public void setstartdate(Date startdate) {
         this.startdate = startdate;
     }
     
@@ -133,5 +134,10 @@ public class EmployeeData {
 
     public void setProfilePhoto(ImageIcon ProfilePhoto) {
         this.ProfilePhoto = ProfilePhoto;
+    }
+    
+    @Override
+    public String toString(){
+        return employeeID;
     }
 }

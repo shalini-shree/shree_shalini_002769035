@@ -30,6 +30,7 @@ employeeDirectory directory;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dateChooserDialog1 = new datechooser.beans.DateChooserDialog();
         SplitPane = new javax.swing.JSplitPane();
         ButtonArea = new javax.swing.JPanel();
         BtnCreateEmployee = new javax.swing.JButton();
@@ -38,9 +39,9 @@ employeeDirectory directory;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        ButtonArea.setBackground(new java.awt.Color(38, 38, 85));
+        ButtonArea.setBackground(new java.awt.Color(0, 153, 153));
 
-        BtnCreateEmployee.setBackground(new java.awt.Color(153, 153, 255));
+        BtnCreateEmployee.setBackground(new java.awt.Color(204, 255, 255));
         BtnCreateEmployee.setText("Create Employee Profile");
         BtnCreateEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -48,7 +49,7 @@ employeeDirectory directory;
             }
         });
 
-        BtnDisplayEmployee.setBackground(new java.awt.Color(153, 153, 255));
+        BtnDisplayEmployee.setBackground(new java.awt.Color(204, 255, 255));
         BtnDisplayEmployee.setText("Display Employee Profile");
         BtnDisplayEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,22 +77,22 @@ employeeDirectory directory;
                 .addComponent(BtnCreateEmployee)
                 .addGap(18, 18, 18)
                 .addComponent(BtnDisplayEmployee)
-                .addContainerGap(532, Short.MAX_VALUE))
+                .addContainerGap(596, Short.MAX_VALUE))
         );
 
         SplitPane.setLeftComponent(ButtonArea);
 
-        DataArea.setBackground(new java.awt.Color(8, 71, 135));
+        DataArea.setBackground(new java.awt.Color(204, 255, 255));
 
         javax.swing.GroupLayout DataAreaLayout = new javax.swing.GroupLayout(DataArea);
         DataArea.setLayout(DataAreaLayout);
         DataAreaLayout.setHorizontalGroup(
             DataAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 514, Short.MAX_VALUE)
+            .addGap(0, 807, Short.MAX_VALUE)
         );
         DataAreaLayout.setVerticalGroup(
             DataAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 636, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
 
         SplitPane.setRightComponent(DataArea);
@@ -165,5 +166,6 @@ employeeDirectory directory;
     private javax.swing.JPanel ButtonArea;
     private javax.swing.JPanel DataArea;
     private javax.swing.JSplitPane SplitPane;
+    private datechooser.beans.DateChooserDialog dateChooserDialog1;
     // End of variables declaration//GEN-END:variables
 }
