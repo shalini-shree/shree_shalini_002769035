@@ -36,4 +36,9 @@ public class Hospital {
     public void setCommunity(String community) {
         this.community = community;
     }
+    
+    @Override
+    public String toString(){
+        return hospitalName;
+    }
 }

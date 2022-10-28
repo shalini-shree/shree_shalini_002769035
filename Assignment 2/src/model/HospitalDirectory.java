@@ -14,18 +14,22 @@ public class HospitalDirectory {
     
     private ArrayList<Hospital> hosphistory;
     
+    public HospitalDirectory(){
+        hosphistory = new ArrayList<Hospital>();
+    }
+    
     public void HospitalHistory() {
         this.hosphistory = new ArrayList<Hospital>();
     }
 
-    public ArrayList<Hospital> gethosphistory() {
+    public ArrayList<Hospital> getHosphistory() {
         return hosphistory;
     }
 
-    public void sethosphistory(ArrayList<Hospital> hosphistory) {
+    public void setHosphistory(ArrayList<Hospital> hosphistory) {
         this.hosphistory = hosphistory;
     }
-    
+
     public Hospital addNewHospital(){
     
         Hospital newhospital = new Hospital();
@@ -37,4 +41,5 @@ public class HospitalDirectory {
         hosphistory.remove(hs);
     }
     
+
 }

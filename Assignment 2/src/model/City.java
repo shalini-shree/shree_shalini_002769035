@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author shalini shree
@@ -12,6 +14,15 @@ package model;
 public class City {
     
     String city;
+    private ArrayList<Community> communityList;
+
+    public ArrayList<Community> getCommunityList() {
+        return communityList;
+    }
+
+    public void setCommunityList(ArrayList<Community> communityList) {
+        this.communityList = communityList;
+    }
 
     public String getCity() {
         return city;

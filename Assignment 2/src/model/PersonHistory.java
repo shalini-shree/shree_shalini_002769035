@@ -39,4 +39,40 @@ public class PersonHistory{
         personhistory.remove(p);
     }
     
+    public PersonHistory()
+    {
+        this.personhistory  = new ArrayList<Person>();
+        
+        Person person = new Person();
+        
+        person.setUsername("sysadmin");
+        person.setPassword("sysadmin");
+        person.setPersonid(1);
+        personhistory.add(person);
+        
+        //Test Data
+        person = new Person();
+        person.setUsername("hospadmin");
+        person.setPassword("hospadmin");
+        person.setPersonid(2);
+        personhistory.add(person);
+        
+        person = new Person();
+        person.setUsername("commadmin");
+        person.setPassword("commadmin");
+        person.setPersonid(3);
+        personhistory.add(person);
+        
+        person = new Person();
+        person.setUsername("doctor");
+        person.setPassword("doctor");
+        person.setPersonid(4);
+        personhistory.add(person);
+        
+        person = new Person();
+        person.setUsername("patient");
+        person.setPassword("patient");
+        person.setPersonid(5);
+        personhistory.add(person);
+    }
 }

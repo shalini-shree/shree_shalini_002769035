@@ -5,9 +5,12 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
 import model.PersonHistory;
 import model.SystemFiles;
 import model.Encounterhistory;
+import model.Person;
+import ui.systemadmin;
  
 
 /**
@@ -23,6 +26,7 @@ public class MainJFrame extends javax.swing.JFrame {
     PersonHistory personhistory;
     SystemFiles systemsys;
     Encounterhistory ehistory;
+    String globalRole;
     
     public MainJFrame() {
         initComponents();
@@ -218,6 +222,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnsystemadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsystemadminActionPerformed
         // TODO add your handling code here:
+        
+        globalRole = "SystemAdmin";
         splitPane.setRightComponent(workArea);
 
     }//GEN-LAST:event_btnsystemadminActionPerformed
@@ -266,7 +272,7 @@ public class MainJFrame extends javax.swing.JFrame {
 //        
         
         systemadmin sa = new systemadmin();
-        splitPane.setRightComponent(sa);
+        //splitPane.setRightComponent(sa);
         //CardLayout layout = (CardLayout)jPanelContainer.getLayout();
         //layout.next(jPanelContainer);
         
@@ -274,32 +280,31 @@ public class MainJFrame extends javax.swing.JFrame {
         //System.out.println(userName);
         //System.out.println(password);
 
-//        if(username.equals("") || password.equals(""))
-//            JOptionPane.showMessageDialog(this, "Please enter User Name and/or Password.");
-//        else
-//        {
-//            for(Person person : systemsys.getPersonHistoryList())
-//            {
+        if(username.equals("") || password.equals(""))
+            JOptionPane.showMessageDialog(this, "Please enter User Name and/or Password.");
+        else
+        {
+            for(Person person : systemsys.getPersonHistoryList())
+            {
 //                //System.out.println(person.getUserName() + "\n" + person.getPassword());
 //
 //                //System.out.println(person.getUserName());
 //                //System.out.println(person.getPassword());
 //
-//                if(person.getUsername().equals(username) && person.getPassword().equals(password))
-//                {
+                if(person.getUsername().equals(username) && person.getPassword().equals(password))
+                {
 //                    JOptionPane.showMessageDialog(this, "User Name and/or Password.");
 ////                    
-////                    LoginJPanel.setVisible(false);
-////                    WelcomeJPanel.setVisible(true);
-////                    NewUserJPanel.setVisible(false);
+                    splitPane.setRightComponent(sa);
+//                    WelcomeJPanel.setVisible(true);
+//                    NewUserJPanel.setVisible(false);
 //                    
-////                    globalRole = person.getRole();
-//                    break;
-//                }
-//                else
-//                    JOptionPane.showMessageDialog(this, "Please enter a valid user name and password.");
-//            }
-//        }
+                    break;
+                }
+                else
+                    JOptionPane.showMessageDialog(this, "Please enter a valid user name and password.");
+            }
+        }
     }//GEN-LAST:event_jloginbtnActionPerformed
 
     /**

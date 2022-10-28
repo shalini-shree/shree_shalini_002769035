@@ -15,7 +15,7 @@ public class SystemFiles {
     
     PersonHistory personHist = new PersonHistory();
     PatientDirectory pdirectory = new PatientDirectory();
-    City c = new City();
+    ArrayList<City> c = new ArrayList<City>();
 
     public PersonHistory getPersonHist() {
         return personHist;
@@ -37,11 +37,16 @@ public class SystemFiles {
         this.pdirectory = pdirectory;
     }
 
-    public City getC() {
+    public ArrayList<City> getC() {
         return c;
     }
 
-    public void setC(City c) {
+    public void setC(ArrayList<City> c) {
         this.c = c;
     }
+    
+    public void AddNewCity(City city){
+        c.add(city);
+    }
+    
 }
