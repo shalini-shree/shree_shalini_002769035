@@ -4,19 +4,25 @@
  */
 package ui;
 
+import ui.MainJFrame;
+import model.City;
+import model.Community;
+
 /**
  *
  * @author shalinishree
  */
-public class hospitaladmin extends javax.swing.JPanel {
+public class communityadmin extends javax.swing.JPanel {
     
+    MainJFrame frame = new MainJFrame();
 
     /**
-     * Creates new form hospitaladmin
+     * Creates new form communityadmin
      */
-    public hospitaladmin() {
+    public communityadmin(String globalrole) {
         initComponents();
         
+        frame.globalRole = globalrole;
     }
 
     /**

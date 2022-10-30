@@ -232,15 +232,17 @@ public class MainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         //PatientDir patientdir = new PatientDir(personhistory,ehistory);
         //splitPane.setRightComponent(patientdir);
+        globalRole = "hospAdmin";
         splitPane.setRightComponent(workArea);
         
     }//GEN-LAST:event_btnhospitaladminActionPerformed
 
     private void btncommadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncommadminActionPerformed
         // TODO add your handling code here:
-        
+        globalRole = "commAdmin";
 //        Encounter encounter = new Encounter(vhistory);
 //        splitPane.setRightComponent(encounter);
+
           splitPane.setRightComponent(workArea);
     }//GEN-LAST:event_btncommadminActionPerformed
 
@@ -267,18 +269,9 @@ public class MainJFrame extends javax.swing.JFrame {
     private void jloginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jloginbtnActionPerformed
         // TODO add your handling code here:
         String username = jusername.getText();
-        String password = new String(jPassword.getPassword());
-        
-//        
-        
-        systemadmin sa = new systemadmin();
-        //splitPane.setRightComponent(sa);
-        //CardLayout layout = (CardLayout)jPanelContainer.getLayout();
-        //layout.next(jPanelContainer);
-        
-
-        //System.out.println(userName);
-        //System.out.println(password);
+        String password = new String(jPassword.getPassword());     
+        boolean flag = false;
+        systemadmin sa = new systemadmin(globalRole);
 
         if(username.equals("") || password.equals(""))
             JOptionPane.showMessageDialog(this, "Please enter User Name and/or Password.");
@@ -286,25 +279,17 @@ public class MainJFrame extends javax.swing.JFrame {
         {
             for(Person person : systemsys.getPersonHistoryList())
             {
-//                //System.out.println(person.getUserName() + "\n" + person.getPassword());
-//
-//                //System.out.println(person.getUserName());
-//                //System.out.println(person.getPassword());
-//
                 if(person.getUsername().equals(username) && person.getPassword().equals(password))
                 {
-//                    JOptionPane.showMessageDialog(this, "User Name and/or Password.");
-////                    
+                    flag = true;
                     splitPane.setRightComponent(sa);
-//                    WelcomeJPanel.setVisible(true);
-//                    NewUserJPanel.setVisible(false);
-//                    
                     break;
                 }
-                else
-                    JOptionPane.showMessageDialog(this, "Please enter a valid user name and password.");
             }
         }
+        
+        if(!flag)
+            JOptionPane.showMessageDialog(this, "Please enter a valid user name and password.");
     }//GEN-LAST:event_jloginbtnActionPerformed
 
     /**

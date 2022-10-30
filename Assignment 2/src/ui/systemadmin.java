@@ -6,6 +6,7 @@ package ui;
 
 import java.awt.event.ItemEvent;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Encounterhistory;
@@ -40,8 +41,9 @@ public class systemadmin extends javax.swing.JPanel {
     /**
      * Creates new form systemadmin
      */
-    public systemadmin() {
+    public systemadmin(String globalrole) {
         initComponents();
+        frame.globalRole = globalrole;
     }
 
     /**
@@ -183,10 +185,10 @@ public class systemadmin extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         encounter_pnameLbl6 = new javax.swing.JLabel();
         encounterdoc_nameLbl6 = new javax.swing.JLabel();
-        doc_HospitalLbl6 = new javax.swing.JLabel();
-        doc_HospitalTxt6 = new javax.swing.JTextField();
+        encounter_HospitalLbl6 = new javax.swing.JLabel();
+        encounterdoc_nameTxt6 = new javax.swing.JTextField();
         encounter_Submit_createbtn = new javax.swing.JButton();
-        doc_nameTxt2 = new javax.swing.JTextField();
+        encounter_pnameTxt6 = new javax.swing.JTextField();
         encounterdateLbl = new javax.swing.JLabel();
         encounter_bpLbl10 = new javax.swing.JLabel();
         jEncounterDateChooser1 = new com.toedter.calendar.JDateChooser();
@@ -194,14 +196,14 @@ public class systemadmin extends javax.swing.JPanel {
         enounter_prLbl2 = new javax.swing.JLabel();
         encounter_prTxt2 = new javax.swing.JTextField();
         encounter_heightLbl2 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        encounter_heightTxt2 = new javax.swing.JTextField();
+        encounter_weightLbl = new javax.swing.JLabel();
+        encounter_weightTxt2 = new javax.swing.JTextField();
+        encounter_HospitalTxt6 = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jdoclistTable2 = new javax.swing.JTable();
+        jencounterlistTable2 = new javax.swing.JTable();
         DeletedocBtn3 = new javax.swing.JButton();
         EditdocBtn3 = new javax.swing.JButton();
         ViewdocBtn3 = new javax.swing.JButton();
@@ -1264,7 +1266,7 @@ public class systemadmin extends javax.swing.JPanel {
 
         encounterdoc_nameLbl6.setText("Doctor Name");
 
-        doc_HospitalLbl6.setText("Hospital");
+        encounter_HospitalLbl6.setText("Hospital");
 
         encounter_Submit_createbtn.setText("Submit");
         encounter_Submit_createbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1273,9 +1275,9 @@ public class systemadmin extends javax.swing.JPanel {
             }
         });
 
-        doc_nameTxt2.addActionListener(new java.awt.event.ActionListener() {
+        encounter_pnameTxt6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                doc_nameTxt2ActionPerformed(evt);
+                encounter_pnameTxt6ActionPerformed(evt);
             }
         });
 
@@ -1299,7 +1301,7 @@ public class systemadmin extends javax.swing.JPanel {
 
         encounter_heightLbl2.setText("Height");
 
-        jLabel13.setText("Weight");
+        encounter_weightLbl.setText("Weight");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -1319,22 +1321,22 @@ public class systemadmin extends javax.swing.JPanel {
                                     .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(encounterdoc_nameLbl6, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
                                         .addComponent(encounter_pnameLbl6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(doc_HospitalLbl6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
+                                        .addComponent(encounter_HospitalLbl6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
                                     .addComponent(encounter_bpLbl10)
                                     .addComponent(enounter_prLbl2)
                                     .addComponent(encounter_heightLbl2)
-                                    .addComponent(jLabel13)
+                                    .addComponent(encounter_weightLbl)
                                     .addComponent(encounterdateLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jEncounterDateChooser1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                                     .addComponent(encounter_bpTxt10, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(encounter_prTxt2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(doc_HospitalTxt6)
-                                    .addComponent(doc_nameTxt2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(encounter_heightTxt2, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(encounter_weightTxt2, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(encounterdoc_nameTxt6)
+                                    .addComponent(encounter_pnameTxt6, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(encounter_HospitalTxt6, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(151, 151, 151)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1346,11 +1348,11 @@ public class systemadmin extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(encounter_pnameLbl6)
-                    .addComponent(doc_nameTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(encounter_pnameTxt6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(encounterdoc_nameLbl6)
-                    .addComponent(doc_HospitalTxt6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(encounterdoc_nameTxt6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jEncounterDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1365,26 +1367,26 @@ public class systemadmin extends javax.swing.JPanel {
                     .addComponent(encounter_prTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(encounter_heightTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(encounter_heightLbl2))
                 .addGap(6, 6, 6)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(encounter_weightLbl, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(encounter_weightTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(doc_HospitalLbl6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(encounter_HospitalLbl6)
+                    .addComponent(encounter_HospitalTxt6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(encounter_Submit_createbtn)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jSplitPane4.setRightComponent(jPanel11);
 
         jLabel8.setText("Display doctor (JPanel 3)");
 
-        jdoclistTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jencounterlistTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1392,11 +1394,21 @@ public class systemadmin extends javax.swing.JPanel {
                 "Name", "Doctor name", "Date"
             }
         ));
-        jScrollPane4.setViewportView(jdoclistTable2);
+        jScrollPane4.setViewportView(jencounterlistTable2);
 
         DeletedocBtn3.setText("Delete");
+        DeletedocBtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeletedocBtn3ActionPerformed(evt);
+            }
+        });
 
         EditdocBtn3.setText("Edit");
+        EditdocBtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditdocBtn3ActionPerformed(evt);
+            }
+        });
 
         ViewdocBtn3.setText("View");
         ViewdocBtn3.addActionListener(new java.awt.event.ActionListener() {
@@ -1590,7 +1602,7 @@ public class systemadmin extends javax.swing.JPanel {
         
         populateTable2();
         
-        if(frame.globalRole == "HospitalAdmin")
+        if(frame.globalRole.equals("hospAdmin"))
             DeleteHospBtn.setVisible(false);
     }//GEN-LAST:event_DisplayHospitalBtnActionPerformed
 
@@ -1661,6 +1673,9 @@ public class systemadmin extends javax.swing.JPanel {
         jDoctorSysAdmin.setVisible(false);
         jEncounterSysAdmin.setVisible(false);
         jPatientSysAdmin.setVisible(false);
+        
+        if(frame.globalRole == "hospAdmin")
+            DeleteHospBtn.setVisible(false);
     }//GEN-LAST:event_hospitalSysAdminBtnActionPerformed
 
         
@@ -1671,6 +1686,9 @@ public class systemadmin extends javax.swing.JPanel {
         jDoctorSysAdmin.setVisible(false);
         jEncounterSysAdmin.setVisible(true);
         jPatientSysAdmin.setVisible(false);
+        
+        if(frame.globalRole == "hospAdmin")
+            DeletedocBtn3.setVisible(false);
     }//GEN-LAST:event_encounterSysAdminBtnActionPerformed
 
     private void HospitalBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HospitalBackBtnActionPerformed
@@ -1693,6 +1711,8 @@ public class systemadmin extends javax.swing.JPanel {
         
         populatedoclistTable();
         
+        if(frame.globalRole.equals("hospAdmin"))
+            DeletedocBtn1.setVisible(false);
 //        if(frame.globalRole == "HospitalAdmin")
 //            DeleteHospBtn.setVisible(false);
     }//GEN-LAST:event_DisplaydocBtnActionPerformed
@@ -1777,6 +1797,9 @@ public class systemadmin extends javax.swing.JPanel {
         jDoctorSysAdmin.setVisible(true);
         jEncounterSysAdmin.setVisible(false);
         jPatientSysAdmin.setVisible(false);
+        
+        if(frame.globalRole == "hospAdmin")
+            DeletedocBtn1.setVisible(false);
     }//GEN-LAST:event_DoctorSysAdminBtnActionPerformed
 
     private void patientSysAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientSysAdminBtnActionPerformed
@@ -1786,6 +1809,9 @@ public class systemadmin extends javax.swing.JPanel {
         jDoctorSysAdmin.setVisible(false);
         jEncounterSysAdmin.setVisible(false);
         jPatientSysAdmin.setVisible(true);
+        
+        if(frame.globalRole == "hospAdmin")
+            DeletepatientBtn2.setVisible(false);
     }//GEN-LAST:event_patientSysAdminBtnActionPerformed
 
     private void NewpatientBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewpatientBtn2ActionPerformed
@@ -1797,6 +1823,9 @@ public class systemadmin extends javax.swing.JPanel {
         // TODO add your handling code here:
         jSplitPane3.setRightComponent(jPanel9);
         populatepatientlistTable1();
+        
+        if(frame.globalRole.equals("hospAdmin"))
+            DeletepatientBtn2.setVisible(false);
         //populatepatientlistTable1();
     }//GEN-LAST:event_DisplaypatientBtn1ActionPerformed
 
@@ -1887,6 +1916,11 @@ public class systemadmin extends javax.swing.JPanel {
     private void DisplayencounterBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayencounterBtn2ActionPerformed
         // TODO add your handling code here:
         jSplitPane4.setRightComponent(jPanel12);
+        
+        populatejencounterlistTable2();
+        
+        if(frame.globalRole.equals("hospAdmin"))
+            DeletedocBtn3.setVisible(false);
     }//GEN-LAST:event_DisplayencounterBtn2ActionPerformed
 
     private void encounterBackBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encounterBackBtn2ActionPerformed
@@ -1900,11 +1934,43 @@ public class systemadmin extends javax.swing.JPanel {
 
     private void encounter_Submit_createbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encounter_Submit_createbtnActionPerformed
         // TODO add your handling code here:
+        encounter_Submit_createbtn.setVisible(true);
+        String encounter_pname = encounter_pnameTxt6.getText();
+        String encounterdoc_name = encounterdoc_nameTxt6.getText();
+        //String encounterdate = encounterdateLbl.getText();
+        Date encounterdate = jEncounterDateChooser1.getDate();
+        String encounter_bp = encounter_bpTxt10.getText();
+        String encounter_pr = encounter_prTxt2.getText();
+        String encounter_height = encounter_heightTxt2.getText();
+        String encounter_weight = encounter_weightTxt2.getText();
+        //String patient_address = patient_addressTxt.getText();
+        //int patient_zip = Integer.parseInt(patient_zipTxt.getText());
+        //String patient_city = patient_cityComboBox1.getSelectedItem().toString();
+        //String patient_community = patient_CommunityCb4.getSelectedItem().toString();
+        String encounter_hospital = encounter_HospitalTxt6.getText();
+        
+        if(encounter_pname.equals("") || encounterdoc_name.equals("") || encounter_bp.equals("") || encounter_pr.equals("") || encounter_height.equals("")|| encounter_weight.equals("")||encounter_hospital.equals("") ){
+            JOptionPane.showMessageDialog(this, "Please enter Valid Details");
+        }
+        
+        Encounter enc = Encounterhistory.addNewEncounter();
+        
+        enc.setE_pname(encounter_pname);
+        enc.setE_dname(encounterdoc_name);
+        enc.setDate(encounterdate);
+        enc.setBloodPressure(encounter_bp);
+        enc.setPulserate(encounter_pr);
+        enc.setHeight(encounter_height);
+        enc.setWeight(encounter_weight);
+        //pat.setCity(patient_city);
+        enc.setHospital(encounter_hospital);
+        
+        JOptionPane.showMessageDialog(this, "Saved Successfully");
     }//GEN-LAST:event_encounter_Submit_createbtnActionPerformed
 
-    private void doc_nameTxt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doc_nameTxt2ActionPerformed
+    private void encounter_pnameTxt6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encounter_pnameTxt6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_doc_nameTxt2ActionPerformed
+    }//GEN-LAST:event_encounter_pnameTxt6ActionPerformed
 
     private void encounterSubmitbtn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encounterSubmitbtn5ActionPerformed
         // TODO add your handling code here:
@@ -1947,7 +2013,7 @@ public class systemadmin extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Enter Valid Patient Name");
         }
         for(Encounter encounter : Encounterhistory.getEhistory()){
-            if(patientName.equals(encounter.getPname())){
+            if(patientName.equals(encounter.getE_pname())){
                 tmpHistory.add(encounter);
             }
         }
@@ -2010,6 +2076,34 @@ public class systemadmin extends javax.swing.JPanel {
 
     private void ViewdocBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewdocBtn3ActionPerformed
         // TODO add your handling code here:
+        int selectedrow = jencounterlistTable2.getSelectedRow();
+        
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+        
+        encounterSubmitbtn5.setVisible(false);
+        DefaultTableModel table = (DefaultTableModel) jencounterlistTable2.getModel();
+        Encounter encounter = (Encounter) table.getValueAt(selectedrow, 0);
+        
+        encounterpatient_name2.setEnabled(false);
+        encounterdoc_nameTxt5.setEnabled(false);
+        encounterDateChooser1.setEnabled(false);
+        encounter_bpTxt.setEnabled(false);
+        encounter_prTxt.setEnabled(false);
+        encounter_heightTxt.setEnabled(false);
+        encounter_weightTxt.setEnabled(false);
+        encounter_HospitalTxt7.setEnabled(false);
+        
+        encounterpatient_name2.setText(encounter.getE_pname());
+        encounterdoc_nameTxt5.setText(encounter.getE_dname());
+        encounterDateChooser1.setDate(encounter.getDate());
+        encounter_bpTxt.setText(encounter.getBloodPressure());
+        encounter_prTxt.setText(encounter.getPulserate());
+        encounter_heightTxt.setText(encounter.getHeight());
+        encounter_weightTxt.setText(encounter.getWeight());
+        encounter_HospitalTxt7.setText(encounter.getHospital());
     }//GEN-LAST:event_ViewdocBtn3ActionPerformed
 
     private void EditHospBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditHospBtnActionPerformed
@@ -2202,6 +2296,56 @@ public class systemadmin extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this, "Record Deleted.");
         populatepatientlistTable1();
     }//GEN-LAST:event_DeletepatientBtn2ActionPerformed
+
+    private void EditdocBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditdocBtn3ActionPerformed
+        // TODO add your handling code here:
+        int selectedrow = jencounterlistTable2.getSelectedRow();
+        
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+        
+        encounterpatient_name2.setEnabled(true);
+        encounterdoc_nameTxt5.setEnabled(true);
+        encounterDateChooser1.setEnabled(true);
+        encounter_bpTxt.setEnabled(true);
+        encounter_prTxt.setEnabled(true);
+        encounter_heightTxt.setEnabled(true);
+        encounter_weightTxt.setEnabled(true);
+        encounter_HospitalTxt7.setEnabled(true);
+        
+        encounterSubmitbtn5.setVisible(true);
+        DefaultTableModel table = (DefaultTableModel) jencounterlistTable2.getModel();
+        Encounter encounter = (Encounter) table.getValueAt(selectedrow, 0);
+        
+        encounterpatient_name2.setText(encounter.getE_pname());
+        encounterdoc_nameTxt5.setText(encounter.getE_dname());
+        encounterDateChooser1.setDate(encounter.getDate());
+        encounter_bpTxt.setText(encounter.getBloodPressure());
+        encounter_prTxt.setText(encounter.getPulserate());
+        encounter_heightTxt.setText(encounter.getHeight());
+        encounter_weightTxt.setText(encounter.getWeight());
+        encounter_HospitalTxt7.setText(encounter.getHospital());
+    
+    }//GEN-LAST:event_EditdocBtn3ActionPerformed
+
+    private void DeletedocBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeletedocBtn3ActionPerformed
+        // TODO add your handling code here:
+        int selectedrow = jencounterlistTable2.getSelectedRow();
+        
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+        
+        DefaultTableModel table = (DefaultTableModel) jencounterlistTable2.getModel();
+        Encounter encounter = (Encounter) table.getValueAt(selectedrow, 0);
+        
+        Encounterhistory.deleteEncounter(encounter);
+        JOptionPane.showMessageDialog(this, "Record Deleted.");
+        populatejencounterlistTable2();
+    }//GEN-LAST:event_DeletedocBtn3ActionPerformed
      
     private void populateTable2(){
         NewHospitalSubmitbtn1.setVisible(false);
@@ -2259,6 +2403,24 @@ public class systemadmin extends javax.swing.JPanel {
                 model.addRow(row);
         }
         }
+        
+        private void populatejencounterlistTable2(){
+            encounter_Submit_createbtn.setVisible(false);
+        
+        DefaultTableModel model = (DefaultTableModel) jencounterlistTable2.getModel();
+        model.setRowCount(0);
+        
+        for(Encounter e : Encounterhistory.getEhistory()){
+            Object[] row=new Object[3];
+            
+                row[0] = e;
+//                row[1] = d.getDoc_name();
+                row[1] = e.getE_dname();
+                row[2] = e.getDate();
+
+                model.addRow(row);
+        }
+        }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CityHospitalLbl;
@@ -2301,10 +2463,8 @@ public class systemadmin extends javax.swing.JPanel {
     private javax.swing.JLabel doc_CityLbl3;
     private javax.swing.JLabel doc_HospitalLbl2;
     private javax.swing.JLabel doc_HospitalLbl3;
-    private javax.swing.JLabel doc_HospitalLbl6;
     private javax.swing.JTextField doc_HospitalTxt2;
     private javax.swing.JTextField doc_HospitalTxt3;
-    private javax.swing.JTextField doc_HospitalTxt6;
     private javax.swing.JButton doc_Submit_displaybtn3;
     private javax.swing.JButton doc_Submitbtn2;
     private javax.swing.JLabel doc_ageLbl10;
@@ -2315,7 +2475,6 @@ public class systemadmin extends javax.swing.JPanel {
     private javax.swing.JLabel doc_nameLbl2;
     private javax.swing.JLabel doc_nameLbl3;
     private javax.swing.JTextField doc_nameTxt;
-    private javax.swing.JTextField doc_nameTxt2;
     private javax.swing.JLabel doc_specialistLbl11;
     private javax.swing.JTextField doc_specialistTxt11;
     private javax.swing.JLabel doc_specialityLbl10;
@@ -2328,7 +2487,9 @@ public class systemadmin extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser encounterDateChooser1;
     private javax.swing.JButton encounterSubmitbtn5;
     private javax.swing.JButton encounterSysAdminBtn;
+    private javax.swing.JLabel encounter_HospitalLbl6;
     private javax.swing.JLabel encounter_HospitalLbl7;
+    private javax.swing.JTextField encounter_HospitalTxt6;
     private javax.swing.JTextField encounter_HospitalTxt7;
     private javax.swing.JButton encounter_Submit_createbtn;
     private javax.swing.JLabel encounter_Weight;
@@ -2339,17 +2500,22 @@ public class systemadmin extends javax.swing.JPanel {
     private javax.swing.JLabel encounter_heightLbl;
     private javax.swing.JLabel encounter_heightLbl2;
     private javax.swing.JTextField encounter_heightTxt;
+    private javax.swing.JTextField encounter_heightTxt2;
     private javax.swing.JLabel encounter_patientdateLbl7;
     private javax.swing.JLabel encounter_pnameLbl6;
+    private javax.swing.JTextField encounter_pnameTxt6;
     private javax.swing.JLabel encounter_prLbl;
     private javax.swing.JTextField encounter_prTxt;
     private javax.swing.JTextField encounter_prTxt2;
+    private javax.swing.JLabel encounter_weightLbl;
     private javax.swing.JTextField encounter_weightTxt;
+    private javax.swing.JTextField encounter_weightTxt2;
     private javax.swing.JButton encountercreateBtn3;
     private javax.swing.JLabel encounterdateLbl;
     private javax.swing.JLabel encounterdoc_nameLBL12;
     private javax.swing.JLabel encounterdoc_nameLbl6;
     private javax.swing.JTextField encounterdoc_nameTxt5;
+    private javax.swing.JTextField encounterdoc_nameTxt6;
     private javax.swing.JTextField encounterpatient_name2;
     private javax.swing.JLabel encounterpatient_nameLbl7;
     private javax.swing.JLabel enounter_prLbl2;
@@ -2359,7 +2525,6 @@ public class systemadmin extends javax.swing.JPanel {
     private javax.swing.JPanel jEncounterSysAdmin;
     private javax.swing.JPanel jHospitalSysAdmin;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2390,11 +2555,8 @@ public class systemadmin extends javax.swing.JPanel {
     private javax.swing.JSplitPane jSplitPane3;
     private javax.swing.JSplitPane jSplitPane4;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTable jdoclistTable;
-    private javax.swing.JTable jdoclistTable2;
+    private javax.swing.JTable jencounterlistTable2;
     private javax.swing.JTable jpatientlistTable1;
     private javax.swing.JTextField newHospitalTxt;
     private javax.swing.JTextField newHospitalTxt1;

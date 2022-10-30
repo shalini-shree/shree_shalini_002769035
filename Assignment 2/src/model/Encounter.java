@@ -5,97 +5,91 @@
  */
 package model;
 
+import java.util.Date;
+
 /**
  *
  * @author shalinishree
  */
 public class Encounter {
     
-    private String pname;
-    private int age;
-    private String address;
+    private String e_pname;
+    private String e_dname;
+    private String bloodPressure;
+    private String pulserate;
+    private Date date;
+    private String height;
+    private String weight;
+    private String Hospital;
 
-    public String getPname() {
-        return pname;
+    public String getE_pname() {
+        return e_pname;
     }
 
-    public void setPname(String pname) {
-        this.pname = pname;
+    public void setE_pname(String e_pname) {
+        this.e_pname = e_pname;
     }
 
-    public int getAge() {
-        return age;
+    public String getE_dname() {
+        return e_dname;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setE_dname(String e_dname) {
+        this.e_dname = e_dname;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public int getZipcode() {
-        return zipcode;
-    }
-
-    public void setZipcode(int zipcode) {
-        this.zipcode = zipcode;
-    }
-    private String city;
-    private int zipcode;
-    private double temperature;
-    private double bloodPressure;
-    private int pulse;
-    private String date;
-
-    public double getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
-    }
-
-    public double getBloodPressure() {
+    public String getBloodPressure() {
         return bloodPressure;
     }
 
-    public void setBloodPressure(double bloodPressure) {
+    public void setBloodPressure(String bloodPressure) {
         this.bloodPressure = bloodPressure;
     }
 
-    public int getPulse() {
-        return pulse;
+    public String getPulserate() {
+        return pulserate;
     }
 
-    public void setPulse(int pulse) {
-        this.pulse = pulse;
+    public void setPulserate(String pulserate) {
+        this.pulserate = pulserate;
     }
 
-    public String getDate() {
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getHospital() {
+        return Hospital;
+    }
+
+    public void setHospital(String Hospital) {
+        this.Hospital = Hospital;
+    }
+    
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
     
+    
     @Override
     public String toString(){
-        return pname;
+        return e_pname;
     }
 
     
