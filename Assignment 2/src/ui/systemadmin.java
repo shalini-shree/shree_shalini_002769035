@@ -1943,7 +1943,6 @@ public class systemadmin extends javax.swing.JPanel {
         encounter_Submit_createbtn.setVisible(true);
         String encounter_pname = encounter_pnameTxt6.getText();
         String encounterdoc_name = encounterdoc_nameTxt6.getText();
-        //String encounterdate = encounterdateLbl.getText();
         Date encounterdate = jEncounterDateChooser1.getDate();
         String encounter_bp = encounter_bpTxt10.getText();
         String encounter_pr = encounter_prTxt2.getText();
@@ -1980,6 +1979,43 @@ public class systemadmin extends javax.swing.JPanel {
 
     private void encounterSubmitbtn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encounterSubmitbtn5ActionPerformed
         // TODO add your handling code here:
+        int selectedrow = jencounterlistTable2.getSelectedRow();
+        
+        String encounter_pname = encounter_pnameTxt6.getText();
+        String encounterdoc_name = encounterdoc_nameTxt6.getText();
+        Date encounterdate = jEncounterDateChooser1.getDate();
+        String encounter_bp = encounter_bpTxt10.getText();
+        String encounter_pr = encounter_prTxt2.getText();
+        String encounter_height = encounter_heightTxt2.getText();
+        String encounter_weight = encounter_weightTxt2.getText();
+        String encounter_hospital = encounter_HospitalTxt6.getText();
+        
+        
+        
+        if(encounter_pname.equals("") || encounterdoc_name.equals("") || encounter_bp.equals("") || encounter_pr.equals("") || encounter_height.equals("")|| encounter_weight.equals("")||encounter_hospital.equals("") ){
+            JOptionPane.showMessageDialog(this, "Please enter Valid Details");
+        }
+        
+        encounterSubmitbtn5.setVisible(true);        
+        DefaultTableModel table = (DefaultTableModel) jencounterlistTable2.getModel();
+        Encounter enc = (Encounter) table.getValueAt(selectedrow, 0);
+        
+        enc.setE_pname(encounter_pname);
+        enc.setE_dname(encounterdoc_name);
+        enc.setDate(encounterdate);
+        enc.setBloodPressure(encounter_bp);
+        enc.setPulserate(encounter_pr);
+        enc.setHeight(encounter_height);
+        enc.setWeight(encounter_weight);
+        //pat.setCity(patient_city);
+        enc.setHospital(encounter_hospital);
+        
+//        
+//        PatientDirectory.getphistory().add(selectedrow+1, pat);
+//        PatientDirectory.getphistory().remove(selectedrow);
+        table.setValueAt(enc, selectedrow, 0);
+        JOptionPane.showMessageDialog(this, "Updated Successfully");
+        populatejencounterlistTable2();
     }//GEN-LAST:event_encounterSubmitbtn5ActionPerformed
 
     private void patient_addressTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patient_addressTxtActionPerformed

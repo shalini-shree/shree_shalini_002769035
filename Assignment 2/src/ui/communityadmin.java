@@ -4,9 +4,15 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import ui.MainJFrame;
 import model.City;
 import model.Community;
+import model.Communitydirectory;
+import model.House;
+import model.Housedirectory;
+import model.citydirectory;
 
 /**
  *
@@ -15,6 +21,9 @@ import model.Community;
 public class communityadmin extends javax.swing.JPanel {
     
     MainJFrame frame = new MainJFrame();
+    citydirectory citydirectory = new citydirectory();
+    Communitydirectory communitydirectory = new Communitydirectory();
+    Housedirectory housedirectory = new Housedirectory();
 
     /**
      * Creates new form communityadmin
@@ -34,23 +43,1385 @@ public class communityadmin extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        comm_landingpage = new javax.swing.JPanel();
+        Community_city = new javax.swing.JButton();
+        community_community = new javax.swing.JButton();
+        community_house = new javax.swing.JButton();
+        comm_city = new javax.swing.JPanel();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        jPanel5 = new javax.swing.JPanel();
+        comm_create_cityBtn = new javax.swing.JButton();
+        comm_display_cityBtn = new javax.swing.JButton();
+        comm_back_cityBtn = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        comm_citycreateLbl = new javax.swing.JLabel();
+        comm_citycreatesubmitBtn = new javax.swing.JButton();
+        comm_citycreateTxt = new javax.swing.JTextField();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        comm_citydisplaytable = new javax.swing.JTable();
+        comm_citydeleteBtn = new javax.swing.JButton();
+        comm_cityupdateBtn = new javax.swing.JButton();
+        comm_city_viewBtn = new javax.swing.JButton();
+        comm_displaysubmitBtn = new javax.swing.JButton();
+        comm_city_displayLbl = new javax.swing.JLabel();
+        comm_city_displayTxt = new javax.swing.JTextField();
+        comm_community = new javax.swing.JPanel();
+        jSplitPane2 = new javax.swing.JSplitPane();
+        jPanel8 = new javax.swing.JPanel();
+        comm_create_communityBtn1 = new javax.swing.JButton();
+        comm_display_communityBtn1 = new javax.swing.JButton();
+        comm_back_communityBtn1 = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        comm_communitycreateLbl1 = new javax.swing.JLabel();
+        comm_communitycreatesubmitBtn1 = new javax.swing.JButton();
+        comm_communitycreateTxt1 = new javax.swing.JTextField();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        comm_communitydisplaytable1 = new javax.swing.JTable();
+        comm_communitydeleteBtn1 = new javax.swing.JButton();
+        comm_communityupdateBtn1 = new javax.swing.JButton();
+        comm_community_viewBtn1 = new javax.swing.JButton();
+        comm_community_displaysubmitBtn = new javax.swing.JButton();
+        comm_community_displayLbl1 = new javax.swing.JLabel();
+        comm_community_displayTxt1 = new javax.swing.JTextField();
+        comm_house = new javax.swing.JPanel();
+        jSplitPane3 = new javax.swing.JSplitPane();
+        jPanel11 = new javax.swing.JPanel();
+        comm_create_houseBtn2 = new javax.swing.JButton();
+        comm_display_houseBtn2 = new javax.swing.JButton();
+        comm_back_houseBtn2 = new javax.swing.JButton();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        comm_house_communityLbl2 = new javax.swing.JLabel();
+        comm_housecreatesubmitBtn2 = new javax.swing.JButton();
+        comm_house_cityLbl = new javax.swing.JLabel();
+        comm_house_zipcodeLbl = new javax.swing.JLabel();
+        comm_house_zipcodeTxt = new javax.swing.JTextField();
+        comm_house_addressTxt = new javax.swing.JTextField();
+        comm_house_addressLbl = new javax.swing.JLabel();
+        comm_house_cityTxt1 = new javax.swing.JTextField();
+        comm_house_communityTxt2 = new javax.swing.JTextField();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        comm_housedisplaytable2 = new javax.swing.JTable();
+        comm_housedeleteBtn2 = new javax.swing.JButton();
+        comm_houseupdateBtn2 = new javax.swing.JButton();
+        comm_house_viewBtn2 = new javax.swing.JButton();
+        comm_house_displaysubmitBtn1 = new javax.swing.JButton();
+        comm_house_communityLbl3 = new javax.swing.JLabel();
+        comm_house_communityTxt3 = new javax.swing.JTextField();
+        comm_house_cityLbl2 = new javax.swing.JLabel();
+        comm_house_cityTxt2 = new javax.swing.JTextField();
+        comm_house_zipcodeTxt2 = new javax.swing.JTextField();
+        comm_house_zipcodeLbl2 = new javax.swing.JLabel();
+        comm_house_AddressTxt2 = new javax.swing.JTextField();
+        comm_house_AddressLbl2 = new javax.swing.JLabel();
+
         setMaximumSize(new java.awt.Dimension(650, 598));
         setPreferredSize(new java.awt.Dimension(650, 598));
         setSize(new java.awt.Dimension(650, 598));
+        setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        Community_city.setText("City");
+        Community_city.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Community_cityActionPerformed(evt);
+            }
+        });
+
+        community_community.setText("Community");
+        community_community.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                community_communityActionPerformed(evt);
+            }
+        });
+
+        community_house.setText("House");
+        community_house.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                community_houseActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout comm_landingpageLayout = new javax.swing.GroupLayout(comm_landingpage);
+        comm_landingpage.setLayout(comm_landingpageLayout);
+        comm_landingpageLayout.setHorizontalGroup(
+            comm_landingpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+            .addGroup(comm_landingpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(comm_landingpageLayout.createSequentialGroup()
+                    .addGap(141, 141, 141)
+                    .addComponent(Community_city)
+                    .addGap(61, 61, 61)
+                    .addComponent(community_community)
+                    .addGap(55, 55, 55)
+                    .addComponent(community_house)
+                    .addContainerGap(153, Short.MAX_VALUE)))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        comm_landingpageLayout.setVerticalGroup(
+            comm_landingpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 598, Short.MAX_VALUE)
+            .addGroup(comm_landingpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(comm_landingpageLayout.createSequentialGroup()
+                    .addGap(281, 281, 281)
+                    .addGroup(comm_landingpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Community_city)
+                        .addComponent(community_community)
+                        .addComponent(community_house))
+                    .addContainerGap(294, Short.MAX_VALUE)))
         );
+
+        add(comm_landingpage, "card2");
+
+        comm_create_cityBtn.setText("Create");
+        comm_create_cityBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_create_cityBtnActionPerformed(evt);
+            }
+        });
+
+        comm_display_cityBtn.setText("View");
+        comm_display_cityBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_display_cityBtnActionPerformed(evt);
+            }
+        });
+
+        comm_back_cityBtn.setText("Back");
+        comm_back_cityBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_back_cityBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(comm_display_cityBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comm_create_cityBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comm_back_cityBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(comm_create_cityBtn)
+                .addGap(39, 39, 39)
+                .addComponent(comm_display_cityBtn)
+                .addGap(33, 33, 33)
+                .addComponent(comm_back_cityBtn)
+                .addContainerGap(318, Short.MAX_VALUE))
+        );
+
+        jSplitPane1.setLeftComponent(jPanel5);
+
+        jLabel1.setText("Create city (JPanel 2])");
+
+        comm_citycreateLbl.setText("City");
+
+        comm_citycreatesubmitBtn.setText("Submit");
+        comm_citycreatesubmitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_citycreatesubmitBtnActionPerformed(evt);
+            }
+        });
+
+        comm_citycreateTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_citycreateTxtActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(comm_citycreateLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(comm_citycreateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(162, 162, 162))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(181, 181, 181)
+                        .addComponent(comm_citycreatesubmitBtn)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(109, 109, 109)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_citycreateLbl)
+                    .addComponent(comm_citycreateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(133, 133, 133)
+                .addComponent(comm_citycreatesubmitBtn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jSplitPane1.setRightComponent(jPanel6);
+
+        jLabel2.setText("Display City (JPanel 3)");
+
+        comm_citydisplaytable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "City"
+            }
+        ));
+        jScrollPane1.setViewportView(comm_citydisplaytable);
+
+        comm_citydeleteBtn.setText("Delete");
+        comm_citydeleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_citydeleteBtnActionPerformed(evt);
+            }
+        });
+
+        comm_cityupdateBtn.setText("Edit");
+        comm_cityupdateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_cityupdateBtnActionPerformed(evt);
+            }
+        });
+
+        comm_city_viewBtn.setText("View");
+        comm_city_viewBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_city_viewBtnActionPerformed(evt);
+            }
+        });
+
+        comm_displaysubmitBtn.setText("Submit");
+        comm_displaysubmitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_displaysubmitBtnActionPerformed(evt);
+            }
+        });
+
+        comm_city_displayLbl.setText("City");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(comm_city_viewBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comm_cityupdateBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comm_citydeleteBtn))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(comm_displaysubmitBtn)
+                        .addGap(231, 231, 231))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(comm_city_displayLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comm_city_displayTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(116, 116, 116))))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_citydeleteBtn)
+                    .addComponent(comm_cityupdateBtn)
+                    .addComponent(comm_city_viewBtn))
+                .addGap(53, 53, 53)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_city_displayTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comm_city_displayLbl))
+                .addGap(38, 38, 38)
+                .addComponent(comm_displaysubmitBtn)
+                .addContainerGap(129, Short.MAX_VALUE))
+        );
+
+        jSplitPane1.setRightComponent(jPanel7);
+
+        javax.swing.GroupLayout comm_cityLayout = new javax.swing.GroupLayout(comm_city);
+        comm_city.setLayout(comm_cityLayout);
+        comm_cityLayout.setHorizontalGroup(
+            comm_cityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane1)
+        );
+        comm_cityLayout.setVerticalGroup(
+            comm_cityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane1)
+        );
+
+        add(comm_city, "card3");
+
+        comm_create_communityBtn1.setText("Create");
+        comm_create_communityBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_create_communityBtn1ActionPerformed(evt);
+            }
+        });
+
+        comm_display_communityBtn1.setText("View");
+        comm_display_communityBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_display_communityBtn1ActionPerformed(evt);
+            }
+        });
+
+        comm_back_communityBtn1.setText("Back");
+        comm_back_communityBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_back_communityBtn1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(comm_display_communityBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comm_create_communityBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comm_back_communityBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(comm_create_communityBtn1)
+                .addGap(39, 39, 39)
+                .addComponent(comm_display_communityBtn1)
+                .addGap(33, 33, 33)
+                .addComponent(comm_back_communityBtn1)
+                .addContainerGap(318, Short.MAX_VALUE))
+        );
+
+        jSplitPane2.setLeftComponent(jPanel8);
+
+        jLabel3.setText("Create community (JPanel 2])");
+
+        comm_communitycreateLbl1.setText("Community");
+
+        comm_communitycreatesubmitBtn1.setText("Submit");
+        comm_communitycreatesubmitBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_communitycreatesubmitBtn1ActionPerformed(evt);
+            }
+        });
+
+        comm_communitycreateTxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_communitycreateTxt1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addContainerGap(63, Short.MAX_VALUE)
+                        .addComponent(comm_communitycreateLbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comm_communitycreatesubmitBtn1)
+                            .addComponent(comm_communitycreateTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(123, 123, 123)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(109, 109, 109)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_communitycreateLbl1)
+                    .addComponent(comm_communitycreateTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(133, 133, 133)
+                .addComponent(comm_communitycreatesubmitBtn1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jSplitPane2.setRightComponent(jPanel9);
+
+        jLabel4.setText("Display Community (JPanel 3)");
+
+        comm_communitydisplaytable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Community"
+            }
+        ));
+        jScrollPane2.setViewportView(comm_communitydisplaytable1);
+
+        comm_communitydeleteBtn1.setText("Delete");
+        comm_communitydeleteBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_communitydeleteBtn1ActionPerformed(evt);
+            }
+        });
+
+        comm_communityupdateBtn1.setText("Edit");
+        comm_communityupdateBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_communityupdateBtn1ActionPerformed(evt);
+            }
+        });
+
+        comm_community_viewBtn1.setText("View");
+        comm_community_viewBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_community_viewBtn1ActionPerformed(evt);
+            }
+        });
+
+        comm_community_displaysubmitBtn.setText("Submit");
+        comm_community_displaysubmitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_community_displaysubmitBtnActionPerformed(evt);
+            }
+        });
+
+        comm_community_displayLbl1.setText("community");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(comm_community_viewBtn1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comm_communityupdateBtn1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comm_communitydeleteBtn1))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                        .addComponent(comm_community_displaysubmitBtn)
+                        .addGap(231, 231, 231))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                        .addComponent(comm_community_displayLbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(comm_community_displayTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(110, 110, 110))))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_communitydeleteBtn1)
+                    .addComponent(comm_communityupdateBtn1)
+                    .addComponent(comm_community_viewBtn1))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_community_displayTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comm_community_displayLbl1))
+                .addGap(31, 31, 31)
+                .addComponent(comm_community_displaysubmitBtn)
+                .addContainerGap(129, Short.MAX_VALUE))
+        );
+
+        jSplitPane2.setRightComponent(jPanel10);
+
+        javax.swing.GroupLayout comm_communityLayout = new javax.swing.GroupLayout(comm_community);
+        comm_community.setLayout(comm_communityLayout);
+        comm_communityLayout.setHorizontalGroup(
+            comm_communityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane2)
+        );
+        comm_communityLayout.setVerticalGroup(
+            comm_communityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane2)
+        );
+
+        add(comm_community, "card4");
+
+        comm_create_houseBtn2.setText("Create");
+        comm_create_houseBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_create_houseBtn2ActionPerformed(evt);
+            }
+        });
+
+        comm_display_houseBtn2.setText("View");
+        comm_display_houseBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_display_houseBtn2ActionPerformed(evt);
+            }
+        });
+
+        comm_back_houseBtn2.setText("Back");
+        comm_back_houseBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_back_houseBtn2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(comm_display_houseBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comm_create_houseBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comm_back_houseBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(comm_create_houseBtn2)
+                .addGap(39, 39, 39)
+                .addComponent(comm_display_houseBtn2)
+                .addGap(33, 33, 33)
+                .addComponent(comm_back_houseBtn2)
+                .addContainerGap(306, Short.MAX_VALUE))
+        );
+
+        jSplitPane3.setLeftComponent(jPanel11);
+
+        jLabel5.setText("Create house (JPanel 2])");
+
+        comm_house_communityLbl2.setText("Community");
+
+        comm_housecreatesubmitBtn2.setText("Submit");
+        comm_housecreatesubmitBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_housecreatesubmitBtn2ActionPerformed(evt);
+            }
+        });
+
+        comm_house_cityLbl.setText("City");
+
+        comm_house_zipcodeLbl.setText("Zip Code");
+
+        comm_house_addressLbl.setText("Address");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                        .addContainerGap(63, Short.MAX_VALUE)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comm_house_communityLbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comm_house_cityLbl)
+                            .addComponent(comm_house_zipcodeLbl)
+                            .addComponent(comm_house_addressLbl))
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(comm_housecreatesubmitBtn2)
+                            .addComponent(comm_house_addressTxt)
+                            .addComponent(comm_house_zipcodeTxt)
+                            .addComponent(comm_house_cityTxt1)
+                            .addComponent(comm_house_communityTxt2, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))
+                        .addGap(90, 90, 90)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_house_addressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comm_house_addressLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_house_zipcodeLbl)
+                    .addComponent(comm_house_zipcodeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_house_cityLbl)
+                    .addComponent(comm_house_cityTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_house_communityLbl2)
+                    .addComponent(comm_house_communityTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(133, 133, 133)
+                .addComponent(comm_housecreatesubmitBtn2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jSplitPane3.setRightComponent(jPanel12);
+
+        jLabel6.setText("Display house (JPanel 3)");
+
+        comm_housedisplaytable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Address", "City", "Community"
+            }
+        ));
+        jScrollPane3.setViewportView(comm_housedisplaytable2);
+
+        comm_housedeleteBtn2.setText("Delete");
+        comm_housedeleteBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_housedeleteBtn2ActionPerformed(evt);
+            }
+        });
+
+        comm_houseupdateBtn2.setText("Edit");
+        comm_houseupdateBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_houseupdateBtn2ActionPerformed(evt);
+            }
+        });
+
+        comm_house_viewBtn2.setText("View");
+        comm_house_viewBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_house_viewBtn2ActionPerformed(evt);
+            }
+        });
+
+        comm_house_displaysubmitBtn1.setText("Submit");
+        comm_house_displaysubmitBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comm_house_displaysubmitBtn1ActionPerformed(evt);
+            }
+        });
+
+        comm_house_communityLbl3.setText("Community");
+
+        comm_house_cityLbl2.setText("City");
+
+        comm_house_zipcodeLbl2.setText("Zip Code");
+
+        comm_house_AddressLbl2.setText("Address");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(comm_house_viewBtn2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comm_houseupdateBtn2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comm_housedeleteBtn2))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addComponent(comm_house_displaysubmitBtn1)
+                        .addGap(231, 231, 231))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comm_house_cityLbl2)
+                            .addComponent(comm_house_zipcodeLbl2)
+                            .addComponent(comm_house_AddressLbl2)
+                            .addComponent(comm_house_communityLbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(comm_house_communityTxt3, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                            .addComponent(comm_house_cityTxt2)
+                            .addComponent(comm_house_zipcodeTxt2)
+                            .addComponent(comm_house_AddressTxt2))
+                        .addGap(96, 96, 96))))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_housedeleteBtn2)
+                    .addComponent(comm_houseupdateBtn2)
+                    .addComponent(comm_house_viewBtn2))
+                .addGap(72, 72, 72)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_house_AddressTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comm_house_AddressLbl2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_house_zipcodeTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comm_house_zipcodeLbl2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_house_cityLbl2)
+                    .addComponent(comm_house_cityTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comm_house_communityTxt3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comm_house_communityLbl3))
+                .addGap(38, 38, 38)
+                .addComponent(comm_house_displaysubmitBtn1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jSplitPane3.setRightComponent(jPanel13);
+
+        javax.swing.GroupLayout comm_houseLayout = new javax.swing.GroupLayout(comm_house);
+        comm_house.setLayout(comm_houseLayout);
+        comm_houseLayout.setHorizontalGroup(
+            comm_houseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+            .addGroup(comm_houseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(comm_houseLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jSplitPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        comm_houseLayout.setVerticalGroup(
+            comm_houseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 598, Short.MAX_VALUE)
+            .addGroup(comm_houseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(comm_houseLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jSplitPane3)
+                    .addContainerGap()))
+        );
+
+        add(comm_house, "card5");
     }// </editor-fold>//GEN-END:initComponents
 
+    private void comm_create_cityBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_create_cityBtnActionPerformed
+        // TODO add your handling code here:
+        jSplitPane1.setRightComponent(jPanel6);
+        
+        comm_citycreatesubmitBtn.setVisible(true);
+    }//GEN-LAST:event_comm_create_cityBtnActionPerformed
+
+    private void comm_display_cityBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_display_cityBtnActionPerformed
+        // TODO add your handling code here:
+        jSplitPane1.setRightComponent(jPanel7);
+
+        populatecomm_citydisplaytable();
+    }//GEN-LAST:event_comm_display_cityBtnActionPerformed
+
+    private void comm_back_cityBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_back_cityBtnActionPerformed
+        // TODO add your handling code here:
+        comm_landingpage.setVisible(true);
+        comm_city.setVisible(false);
+        comm_community.setVisible(false);
+        comm_house.setVisible(false);
+    }//GEN-LAST:event_comm_back_cityBtnActionPerformed
+
+    private void comm_citycreatesubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_citycreatesubmitBtnActionPerformed
+        // TODO add your handling code here:
+        String city = comm_citycreateTxt.getText();
+                
+        if(city.equals("")){
+            JOptionPane.showMessageDialog(this, "Please enter Valid Details");
+        }
+        
+        City c = citydirectory.AddNewCity();
+        
+        
+        c.setCity(city);        
+        JOptionPane.showMessageDialog(this, "Saved Successfully");
+        
+        populatecomm_citydisplaytable();
+    }//GEN-LAST:event_comm_citycreatesubmitBtnActionPerformed
+
+    private void comm_citydeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_citydeleteBtnActionPerformed
+        // TODO add your handling code here:
+        int selectedrow = comm_citydisplaytable.getSelectedRow();
+
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+
+        comm_displaysubmitBtn.setVisible(false);
+        DefaultTableModel table = (DefaultTableModel) comm_citydisplaytable.getModel();
+        City city = (City) table.getValueAt(selectedrow, 0);
+//
+        citydirectory.deleteCity(city);
+//
+        populatecomm_citydisplaytable();
+    }//GEN-LAST:event_comm_citydeleteBtnActionPerformed
+
+    private void comm_cityupdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_cityupdateBtnActionPerformed
+        // TODO add your handling code here:
+        int selectedrow = comm_citydisplaytable.getSelectedRow();
+
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+
+        comm_city_displayTxt.setEnabled(true);
+//        CommunityUpdateTxt.setEnabled(true);
+//        newHospitalTxt1.setEnabled(true);
+//
+        comm_displaysubmitBtn.setVisible(true);
+        DefaultTableModel table = (DefaultTableModel) comm_citydisplaytable.getModel();
+        City city = (City) table.getValueAt(selectedrow, 0);
+//
+        comm_city_displayTxt.setText(city.getCity());
+    }//GEN-LAST:event_comm_cityupdateBtnActionPerformed
+
+    private void comm_city_viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_city_viewBtnActionPerformed
+        // TODO add your handling code here:
+        int selectedrow = comm_citydisplaytable.getSelectedRow();
+
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+
+        comm_displaysubmitBtn.setVisible(false);
+        DefaultTableModel table = (DefaultTableModel) comm_citydisplaytable.getModel();
+        City city = (City) table.getValueAt(selectedrow, 0);
+//
+        comm_city_displayTxt.setEnabled(false);
+//
+        comm_city_displayTxt.setText(city.getCity());
+    }//GEN-LAST:event_comm_city_viewBtnActionPerformed
+
+    private void comm_displaysubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_displaysubmitBtnActionPerformed
+        // TODO add your handling code here:
+
+        boolean flag = true;
+        StringBuilder error = new StringBuilder();
+        int selectedrow = comm_citydisplaytable.getSelectedRow();
+//
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+//
+        if(comm_city_displayTxt.getText().equals(""))
+        flag = false;
+//        if(CommunityUpdateTxt.getText().equals(""))
+//        flag = false;
+//        if(newHospitalTxt1.getText().equals(""))
+//        flag = false;
+//
+        if(!flag){
+            JOptionPane.showMessageDialog(this, "Fields cannot be blank.");
+            return;
+        }
+//
+        comm_displaysubmitBtn.setVisible(true);
+        DefaultTableModel table = (DefaultTableModel) comm_citydisplaytable.getModel();
+        City city = (City) table.getValueAt(selectedrow, 0);
+//
+        city.setCity(comm_city_displayTxt.getText());
+//        hospital.setCommunity(CommunityUpdateTxt.getText());
+//        hospital.setHospitalName(newHospitalTxt1.getText());
+//
+        JOptionPane.showMessageDialog(this, "Saved Successfully.");
+        populatecomm_citydisplaytable();
+    }//GEN-LAST:event_comm_displaysubmitBtnActionPerformed
+
+    private void comm_create_communityBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_create_communityBtn1ActionPerformed
+        // TODO add your handling code here:
+        jSplitPane2.setRightComponent(jPanel9);
+        
+        comm_communitycreatesubmitBtn1.setVisible(true);
+    }//GEN-LAST:event_comm_create_communityBtn1ActionPerformed
+
+    private void comm_display_communityBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_display_communityBtn1ActionPerformed
+        // TODO add your handling code here:
+        jSplitPane2.setRightComponent(jPanel10);
+        
+        populatecomm_communitydisplaytable1();
+    }//GEN-LAST:event_comm_display_communityBtn1ActionPerformed
+
+    private void comm_back_communityBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_back_communityBtn1ActionPerformed
+        // TODO add your handling code here:
+        comm_landingpage.setVisible(true);
+        comm_city.setVisible(false);
+        comm_community.setVisible(false);
+        comm_house.setVisible(false);
+    }//GEN-LAST:event_comm_back_communityBtn1ActionPerformed
+
+    private void comm_communitycreatesubmitBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_communitycreatesubmitBtn1ActionPerformed
+        // TODO add your handling code here:
+        String community = comm_communitycreateTxt1.getText();
+                
+        if(community.equals("")){
+            JOptionPane.showMessageDialog(this, "Please enter Valid Details");
+        }
+        
+        Community comm = communitydirectory.AddNewCommunity();
+        
+        
+        comm.setCommunity(community);        
+        JOptionPane.showMessageDialog(this, "Saved Successfully");
+        
+        populatecomm_communitydisplaytable1();
+    }//GEN-LAST:event_comm_communitycreatesubmitBtn1ActionPerformed
+
+    private void comm_communitydeleteBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_communitydeleteBtn1ActionPerformed
+        // TODO add your handling code here:
+        int selectedrow = comm_communitydisplaytable1.getSelectedRow();
+
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+
+        comm_community_displaysubmitBtn.setVisible(false);
+        DefaultTableModel table = (DefaultTableModel) comm_communitydisplaytable1.getModel();
+        Community comm = (Community) table.getValueAt(selectedrow, 0);
+//
+        communitydirectory.deleteCommunity(comm);
+//
+        populatecomm_communitydisplaytable1();
+    }//GEN-LAST:event_comm_communitydeleteBtn1ActionPerformed
+
+    private void comm_communityupdateBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_communityupdateBtn1ActionPerformed
+        // TODO add your handling code here:
+        int selectedrow = comm_communitydisplaytable1.getSelectedRow();
+
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+
+        comm_community_displayTxt1.setEnabled(true);
+//        CommunityUpdateTxt.setEnabled(true);
+//        newHospitalTxt1.setEnabled(true);
+//
+        comm_community_displaysubmitBtn.setVisible(true);
+        DefaultTableModel table = (DefaultTableModel) comm_communitydisplaytable1.getModel();
+        Community comm = (Community) table.getValueAt(selectedrow, 0);
+//
+        comm_community_displayTxt1.setText(comm.getCommunity());
+    }//GEN-LAST:event_comm_communityupdateBtn1ActionPerformed
+
+    private void comm_community_viewBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_community_viewBtn1ActionPerformed
+        // TODO add your handling code here:
+        int selectedrow = comm_communitydisplaytable1.getSelectedRow();
+
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+
+        comm_community_displaysubmitBtn.setVisible(false);
+        DefaultTableModel table = (DefaultTableModel) comm_communitydisplaytable1.getModel();
+        Community comm = (Community) table.getValueAt(selectedrow, 0);
+//
+        comm_community_displayTxt1.setEnabled(false);
+//
+        comm_community_displayTxt1.setText(comm.getCommunity());
+    }//GEN-LAST:event_comm_community_viewBtn1ActionPerformed
+
+    private void comm_community_displaysubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_community_displaysubmitBtnActionPerformed
+        // TODO add your handling code here:
+        boolean flag = true;
+        StringBuilder error = new StringBuilder();
+        int selectedrow = comm_communitydisplaytable1.getSelectedRow();
+//
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+//
+        if(comm_community_displayTxt1.getText().equals(""))
+        flag = false;
+//        if(CommunityUpdateTxt.getText().equals(""))
+//        flag = false;
+//        if(newHospitalTxt1.getText().equals(""))
+//        flag = false;
+//
+        if(!flag){
+            JOptionPane.showMessageDialog(this, "Fields cannot be blank.");
+            return;
+        }
+//
+        comm_community_displaysubmitBtn.setVisible(true);
+        DefaultTableModel table = (DefaultTableModel) comm_communitydisplaytable1.getModel();
+        Community comm = (Community) table.getValueAt(selectedrow, 0);
+//
+        comm.setCommunity(comm_community_displayTxt1.getText());
+//        hospital.setCommunity(CommunityUpdateTxt.getText());
+//        hospital.setHospitalName(newHospitalTxt1.getText());
+//
+        JOptionPane.showMessageDialog(this, "Saved Successfully.");
+        populatecomm_communitydisplaytable1();
+    }//GEN-LAST:event_comm_community_displaysubmitBtnActionPerformed
+
+    private void comm_create_houseBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_create_houseBtn2ActionPerformed
+        // TODO add your handling code here:
+        jSplitPane3.setRightComponent(jPanel12);
+        
+        comm_create_houseBtn2.setVisible(true);
+        
+        //for(City c : )
+    }//GEN-LAST:event_comm_create_houseBtn2ActionPerformed
+
+    private void comm_display_houseBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_display_houseBtn2ActionPerformed
+        // TODO add your handling code here:
+        jSplitPane3.setRightComponent(jPanel13);
+        
+        populatecomm_housedisplaytable2();
+    }//GEN-LAST:event_comm_display_houseBtn2ActionPerformed
+
+    private void comm_back_houseBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_back_houseBtn2ActionPerformed
+        // TODO add your handling code here:
+        comm_landingpage.setVisible(true);
+        comm_city.setVisible(false);
+        comm_community.setVisible(false);
+        comm_house.setVisible(false);
+    }//GEN-LAST:event_comm_back_houseBtn2ActionPerformed
+
+    private void comm_housecreatesubmitBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_housecreatesubmitBtn2ActionPerformed
+        // TODO add your handling code here:
+        String h_address = comm_house_addressTxt.getText();
+        String h_zipcode = comm_house_zipcodeTxt.getText();
+        String h_city = comm_house_cityTxt1.getText();
+        String h_community = comm_house_communityTxt2.getText();
+                
+        if(h_address.equals("")|| h_zipcode.equals("") || h_city.equals("") || h_community.equals("")){
+            JOptionPane.showMessageDialog(this, "Please enter Valid Details");
+        }
+        
+        House house = housedirectory.AddNewhouse();
+        
+        
+        house.setAddress(h_address);  
+        house.setH_zipcode(h_zipcode);
+        house.setH_city(h_city);
+        house.setH_community(h_community);
+        JOptionPane.showMessageDialog(this, "Saved Successfully");
+        
+        populatecomm_housedisplaytable2();
+    }//GEN-LAST:event_comm_housecreatesubmitBtn2ActionPerformed
+
+    private void comm_housedeleteBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_housedeleteBtn2ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedrow = comm_housedisplaytable2.getSelectedRow();
+
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+
+        comm_house_displaysubmitBtn1.setVisible(false);
+        DefaultTableModel table = (DefaultTableModel) comm_housedisplaytable2.getModel();
+        House house = (House) table.getValueAt(selectedrow, 0);
+//
+        housedirectory.deleteHouse(house);
+//
+        populatecomm_housedisplaytable2();
+    }//GEN-LAST:event_comm_housedeleteBtn2ActionPerformed
+
+    private void comm_houseupdateBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_houseupdateBtn2ActionPerformed
+        // TODO add your handling code here:
+        int selectedrow = comm_housedisplaytable2.getSelectedRow();
+
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+
+        comm_house_AddressTxt2.setEnabled(true);
+        comm_house_zipcodeTxt2.setEnabled(true);
+        comm_house_cityTxt2.setEnabled(true);
+        comm_house_communityTxt3.setEnabled(true);
+//
+        comm_house_displaysubmitBtn1.setVisible(true);
+        DefaultTableModel table = (DefaultTableModel) comm_housedisplaytable2.getModel();
+        House house = (House) table.getValueAt(selectedrow, 0);
+//
+        comm_house_AddressTxt2.setText(house.getAddress());
+        comm_house_zipcodeTxt2.setText(house.getH_zipcode());
+        comm_house_cityTxt2.setText(house.getH_city());
+        comm_house_communityTxt3.setText(house.getH_community());
+    }//GEN-LAST:event_comm_houseupdateBtn2ActionPerformed
+
+    private void comm_house_viewBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_house_viewBtn2ActionPerformed
+        // TODO add your handling code here:
+        int selectedrow = comm_housedisplaytable2.getSelectedRow();
+
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+
+        comm_house_displaysubmitBtn1.setVisible(false);
+        DefaultTableModel table = (DefaultTableModel) comm_housedisplaytable2.getModel();
+        House house = (House) table.getValueAt(selectedrow, 0);
+//
+        comm_house_AddressTxt2.setEnabled(false);
+        comm_house_zipcodeTxt2.setEnabled(false);
+        comm_house_cityTxt2.setEnabled(false);
+        comm_house_communityTxt3.setEnabled(false);
+//
+        comm_house_AddressTxt2.setText(house.getAddress());
+        comm_house_zipcodeTxt2.setText(house.getH_zipcode());
+        comm_house_cityTxt2.setText(house.getH_city());
+        comm_house_communityTxt3.setText(house.getH_community());
+    }//GEN-LAST:event_comm_house_viewBtn2ActionPerformed
+
+    private void comm_house_displaysubmitBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_house_displaysubmitBtn1ActionPerformed
+        // TODO add your handling code here:
+        boolean flag = true;
+        StringBuilder error = new StringBuilder();
+        int selectedrow = comm_housedisplaytable2.getSelectedRow();
+//
+        if(selectedrow < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+            return;
+        }
+//
+        if(comm_house_addressTxt.getText().equals(""))
+        flag = false;
+        if(comm_house_zipcodeTxt.getText().equals(""))
+        flag = false;
+        if(comm_house_cityTxt1.getText().equals(""))
+        flag = false;
+        if(comm_house_communityTxt2.getText().equals(""))
+        flag = false;
+//
+        if(!flag){
+            JOptionPane.showMessageDialog(this, "Fields cannot be blank.");
+            return;
+        }
+//
+        comm_house_displaysubmitBtn1.setVisible(true);
+        DefaultTableModel table = (DefaultTableModel) comm_housedisplaytable2.getModel();
+        House house = (House) table.getValueAt(selectedrow, 0);
+//
+        house.setAddress(comm_house_addressTxt.getText());
+        house.setH_zipcode(comm_house_zipcodeTxt.getText());
+        house.setH_city(comm_house_cityTxt1.getText());
+        house.setH_community(comm_house_communityTxt2.getText());
+//
+        JOptionPane.showMessageDialog(this, "Saved Successfully.");
+        populatecomm_housedisplaytable2();
+    }//GEN-LAST:event_comm_house_displaysubmitBtn1ActionPerformed
+
+    private void Community_cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Community_cityActionPerformed
+        // TODO add your handling code here:
+        comm_landingpage.setVisible(false);
+        comm_city.setVisible(true);
+        comm_community.setVisible(false);
+        comm_house.setVisible(false);
+    }//GEN-LAST:event_Community_cityActionPerformed
+
+    private void community_communityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_community_communityActionPerformed
+        // TODO add your handling code here:
+        comm_landingpage.setVisible(false);
+        comm_city.setVisible(false);
+        comm_community.setVisible(true);
+        comm_house.setVisible(false);
+    }//GEN-LAST:event_community_communityActionPerformed
+
+    private void community_houseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_community_houseActionPerformed
+        // TODO add your handling code here:
+        comm_landingpage.setVisible(false);
+        comm_city.setVisible(false);
+        comm_community.setVisible(false);
+        comm_house.setVisible(true);
+    }//GEN-LAST:event_community_houseActionPerformed
+
+    private void comm_communitycreateTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_communitycreateTxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comm_communitycreateTxt1ActionPerformed
+
+    private void comm_citycreateTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comm_citycreateTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comm_citycreateTxtActionPerformed
+
+    
+    public void populatecomm_citydisplaytable(){
+        comm_citycreatesubmitBtn.setVisible(false);
+        
+        DefaultTableModel model = (DefaultTableModel) comm_citydisplaytable.getModel();
+        model.setRowCount(0);
+        
+        for(City c : citydirectory.getCitylist()){
+            Object[] row=new Object[1];
+            
+                row[0] = c;
+
+                model.addRow(row);
+    }
+    }
+    public void populatecomm_communitydisplaytable1(){
+        comm_communitycreatesubmitBtn1.setVisible(false);
+        
+        DefaultTableModel model = (DefaultTableModel) comm_communitydisplaytable1.getModel();
+        model.setRowCount(0);
+        
+        for(Community comm : communitydirectory.getCommlist()){
+            Object[] row=new Object[1];
+            
+                row[0] = comm;
+
+                model.addRow(row);
+    }
+    }
+    public void populatecomm_housedisplaytable2(){
+        comm_housecreatesubmitBtn2.setVisible(false);
+        
+        DefaultTableModel model = (DefaultTableModel) comm_housedisplaytable2.getModel();
+        model.setRowCount(0);
+        
+        for(House house : housedirectory.gethouselist()){
+            Object[] row=new Object[3];
+            
+                row[0] = house;
+                row[1] = house.getH_city();
+                row[2] = house.getH_community();
+
+                model.addRow(row);
+    }
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Community_city;
+    private javax.swing.JButton comm_back_cityBtn;
+    private javax.swing.JButton comm_back_communityBtn1;
+    private javax.swing.JButton comm_back_houseBtn2;
+    private javax.swing.JPanel comm_city;
+    private javax.swing.JLabel comm_city_displayLbl;
+    private javax.swing.JTextField comm_city_displayTxt;
+    private javax.swing.JButton comm_city_viewBtn;
+    private javax.swing.JLabel comm_citycreateLbl;
+    private javax.swing.JTextField comm_citycreateTxt;
+    private javax.swing.JButton comm_citycreatesubmitBtn;
+    private javax.swing.JButton comm_citydeleteBtn;
+    private javax.swing.JTable comm_citydisplaytable;
+    private javax.swing.JButton comm_cityupdateBtn;
+    private javax.swing.JPanel comm_community;
+    private javax.swing.JLabel comm_community_displayLbl1;
+    private javax.swing.JTextField comm_community_displayTxt1;
+    private javax.swing.JButton comm_community_displaysubmitBtn;
+    private javax.swing.JButton comm_community_viewBtn1;
+    private javax.swing.JLabel comm_communitycreateLbl1;
+    private javax.swing.JTextField comm_communitycreateTxt1;
+    private javax.swing.JButton comm_communitycreatesubmitBtn1;
+    private javax.swing.JButton comm_communitydeleteBtn1;
+    private javax.swing.JTable comm_communitydisplaytable1;
+    private javax.swing.JButton comm_communityupdateBtn1;
+    private javax.swing.JButton comm_create_cityBtn;
+    private javax.swing.JButton comm_create_communityBtn1;
+    private javax.swing.JButton comm_create_houseBtn2;
+    private javax.swing.JButton comm_display_cityBtn;
+    private javax.swing.JButton comm_display_communityBtn1;
+    private javax.swing.JButton comm_display_houseBtn2;
+    private javax.swing.JButton comm_displaysubmitBtn;
+    private javax.swing.JPanel comm_house;
+    private javax.swing.JLabel comm_house_AddressLbl2;
+    private javax.swing.JTextField comm_house_AddressTxt2;
+    private javax.swing.JLabel comm_house_addressLbl;
+    private javax.swing.JTextField comm_house_addressTxt;
+    private javax.swing.JLabel comm_house_cityLbl;
+    private javax.swing.JLabel comm_house_cityLbl2;
+    private javax.swing.JTextField comm_house_cityTxt1;
+    private javax.swing.JTextField comm_house_cityTxt2;
+    private javax.swing.JLabel comm_house_communityLbl2;
+    private javax.swing.JLabel comm_house_communityLbl3;
+    private javax.swing.JTextField comm_house_communityTxt2;
+    private javax.swing.JTextField comm_house_communityTxt3;
+    private javax.swing.JButton comm_house_displaysubmitBtn1;
+    private javax.swing.JButton comm_house_viewBtn2;
+    private javax.swing.JLabel comm_house_zipcodeLbl;
+    private javax.swing.JLabel comm_house_zipcodeLbl2;
+    private javax.swing.JTextField comm_house_zipcodeTxt;
+    private javax.swing.JTextField comm_house_zipcodeTxt2;
+    private javax.swing.JButton comm_housecreatesubmitBtn2;
+    private javax.swing.JButton comm_housedeleteBtn2;
+    private javax.swing.JTable comm_housedisplaytable2;
+    private javax.swing.JButton comm_houseupdateBtn2;
+    private javax.swing.JPanel comm_landingpage;
+    private javax.swing.JButton community_community;
+    private javax.swing.JButton community_house;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JSplitPane jSplitPane2;
+    private javax.swing.JSplitPane jSplitPane3;
     // End of variables declaration//GEN-END:variables
 }

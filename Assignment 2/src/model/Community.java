@@ -12,7 +12,6 @@ package model;
 public class Community {
     
     String community;
-    int zipcode;
 
     public String getCommunity() {
         return community;
@@ -21,13 +20,9 @@ public class Community {
     public void setCommunity(String community) {
         this.community = community;
     }
-
-    public int getZipcode() {
-        return zipcode;
-    }
-
-    public void setZipcode(int zipcode) {
-        this.zipcode = zipcode;
+    @Override
+    public String toString(){
+        return community;
     }
     
 }

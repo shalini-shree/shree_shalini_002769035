@@ -14,21 +14,16 @@ import java.util.ArrayList;
 public class City {
     
     String city;
-    private ArrayList<Community> communityList;
-
-    public ArrayList<Community> getCommunityList() {
-        return communityList;
-    }
-
-    public void setCommunityList(ArrayList<Community> communityList) {
-        this.communityList = communityList;
-    }
-
     public String getCity() {
         return city;
     }
 
     public void setCity(String city) {
         this.city = city;
+    }
+    
+    @Override
+    public String toString(){
+        return city;
     }
 }

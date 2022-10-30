@@ -282,7 +282,12 @@ public class MainJFrame extends javax.swing.JFrame {
                 if(person.getUsername().equals(username) && person.getPassword().equals(password))
                 {
                     flag = true;
-                    splitPane.setRightComponent(sa);
+                    
+                    if(globalRole.equals("SystemAdmin") || globalRole.equals("hospAdmin") )
+                        splitPane.setRightComponent(sa);
+                    else if (globalRole.equals("commAdmin") )
+                        splitPane.setRightComponent(new communityadmin(globalRole));
+                    
                     break;
                 }
             }
