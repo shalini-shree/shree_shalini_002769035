@@ -363,7 +363,7 @@ public class systemadmin extends javax.swing.JPanel {
             }
         });
 
-        commhospitalComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        commhospitalComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Community I", "Community II", "Community III", "Community IV" }));
         commhospitalComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 commhospitalComboBoxItemStateChanged(evt);
@@ -746,6 +746,8 @@ public class systemadmin extends javax.swing.JPanel {
         doc_nameLbl3.setText("Name");
 
         doc_CityLbl3.setText("City");
+
+        doc_CityCb3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Boston", "New York", "Los Angeles", "Chicago", "Seattle" }));
 
         doc_HospitalLbl3.setText("Hospital");
 
@@ -1594,6 +1596,7 @@ public class systemadmin extends javax.swing.JPanel {
     private void NewHospitalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewHospitalBtnActionPerformed
         // TODO add your handling code here:
         jSplitPane1.setRightComponent(jPanel2);
+        NewHospitalBtn.setVisible(true);
     }//GEN-LAST:event_NewHospitalBtnActionPerformed
 
     private void DisplayHospitalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayHospitalBtnActionPerformed
@@ -1703,6 +1706,7 @@ public class systemadmin extends javax.swing.JPanel {
     private void NewdocBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewdocBtn1ActionPerformed
         // TODO add your handling code here:
         jSplitPane2.setRightComponent(jPanel5);
+        NewdocBtn1.setVisible(true);
     }//GEN-LAST:event_NewdocBtn1ActionPerformed
 
     private void DisplaydocBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplaydocBtnActionPerformed
@@ -1817,6 +1821,7 @@ public class systemadmin extends javax.swing.JPanel {
     private void NewpatientBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewpatientBtn2ActionPerformed
         // TODO add your handling code here:
         jSplitPane3.setRightComponent(jPanel8);
+        NewpatientBtn2.setVisible(true);
     }//GEN-LAST:event_NewpatientBtn2ActionPerformed
 
     private void DisplaypatientBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplaypatientBtn1ActionPerformed
@@ -1911,6 +1916,7 @@ public class systemadmin extends javax.swing.JPanel {
     private void encountercreateBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encountercreateBtn3ActionPerformed
         // TODO add your handling code here:
         jSplitPane4.setRightComponent(jPanel11);
+        encountercreateBtn3.setVisible(true);
     }//GEN-LAST:event_encountercreateBtn3ActionPerformed
 
     private void DisplayencounterBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayencounterBtn2ActionPerformed
