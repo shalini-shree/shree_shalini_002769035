@@ -74,7 +74,9 @@ public class systemadmin extends javax.swing.JPanel {
                 DoctorSysAdminBtn.setVisible(true);
                 break;
             }
-            
+            default :{
+                break;
+            }
         }
     }
 
@@ -1948,14 +1950,15 @@ public class systemadmin extends javax.swing.JPanel {
     private void encountercreateBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encountercreateBtn3ActionPerformed
         // TODO add your handling code here:
         jSplitPane4.setRightComponent(jPanel11);
-        encountercreateBtn3.setVisible(true);
+        
+        encounter_Submit_createbtn.setVisible(true);
     }//GEN-LAST:event_encountercreateBtn3ActionPerformed
 
     private void DisplayencounterBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayencounterBtn2ActionPerformed
         // TODO add your handling code here:
         jSplitPane4.setRightComponent(jPanel12);
         
-        populatejencounterlistTable2();
+        populatejencounterlistTable2(null);
         
         if(frame.globalRole.equals("hospAdmin"))
             DeletedocBtn3.setVisible(false);
@@ -2047,7 +2050,9 @@ public class systemadmin extends javax.swing.JPanel {
 //        PatientDirectory.getphistory().remove(selectedrow);
         table.setValueAt(enc, selectedrow, 0);
         JOptionPane.showMessageDialog(this, "Updated Successfully");
-        populatejencounterlistTable2();
+        
+        
+        populatejencounterlistTable2(null);
     }//GEN-LAST:event_encounterSubmitbtn5ActionPerformed
 
     private void patient_addressTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patient_addressTxtActionPerformed
@@ -2080,7 +2085,7 @@ public class systemadmin extends javax.swing.JPanel {
 
     private void patientsearchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientsearchBtnActionPerformed
         // TODO add your handling code here:
-        String patientName = patientsearchBtn.getText();
+        String patientName = patientsearchTxt.getText();
         ArrayList<Encounter> tmpHistory = new ArrayList<Encounter>();
         if(patientName.equals(""))
         {
@@ -2092,7 +2097,7 @@ public class systemadmin extends javax.swing.JPanel {
             }
         }
         
-        //getTableData(tmpHistory);
+        populatejencounterlistTable2(tmpHistory);
     }//GEN-LAST:event_patientsearchBtnActionPerformed
 
     private void cityhospitalComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityhospitalComboBox1ActionPerformed
@@ -2418,7 +2423,7 @@ public class systemadmin extends javax.swing.JPanel {
         
         Encounterhistory.deleteEncounter(encounter);
         JOptionPane.showMessageDialog(this, "Record Deleted.");
-        populatejencounterlistTable2();
+        populatejencounterlistTable2(null);
     }//GEN-LAST:event_DeletedocBtn3ActionPerformed
      
     private void populateTable2(){
@@ -2478,9 +2483,10 @@ public class systemadmin extends javax.swing.JPanel {
         }
         }
         
-        private void populatejencounterlistTable2(){
+        private void populatejencounterlistTable2(ArrayList<Encounter> eh){
             encounter_Submit_createbtn.setVisible(false);
         
+            if(eh == null){
         DefaultTableModel model = (DefaultTableModel) jencounterlistTable2.getModel();
         model.setRowCount(0);
         
@@ -2494,6 +2500,22 @@ public class systemadmin extends javax.swing.JPanel {
 
                 model.addRow(row);
         }
+            }
+            else{
+            DefaultTableModel model = (DefaultTableModel) jencounterlistTable2.getModel();
+        model.setRowCount(0);
+        
+        for(Encounter e : eh){
+            Object[] row=new Object[3];
+            
+                row[0] = e;
+//                row[1] = d.getDoc_name();
+                row[1] = e.getE_dname();
+                row[2] = e.getDate();
+
+                model.addRow(row);
+        }
+            }
         }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

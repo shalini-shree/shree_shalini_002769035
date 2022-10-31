@@ -27,12 +27,15 @@ public class MainJFrame extends javax.swing.JFrame {
     SystemFiles systemsys;
     Encounterhistory ehistory;
     String globalRole;
+    systemadmin sa;
     
     public MainJFrame() {
         initComponents();
         systemsys = new SystemFiles();
         personhistory = new PersonHistory();
         ehistory = new Encounterhistory();
+        globalRole = "";
+        sa = null;
     }
 
     /**
@@ -223,6 +226,9 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnsystemadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsystemadminActionPerformed
         // TODO add your handling code here:
         
+        if(globalRole.equals(""))
+            sa = new systemadmin(globalRole);
+        
         globalRole = "SystemAdmin";
         splitPane.setRightComponent(workArea);
 
@@ -232,6 +238,10 @@ public class MainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         //PatientDir patientdir = new PatientDir(personhistory,ehistory);
         //splitPane.setRightComponent(patientdir);
+        
+        if(globalRole.equals(""))
+            sa = new systemadmin(globalRole);
+        
         globalRole = "hospAdmin";
         splitPane.setRightComponent(workArea);
         
@@ -239,6 +249,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btncommadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncommadminActionPerformed
         // TODO add your handling code here:
+        
+        
+        if(globalRole.equals(""))
+            sa = new systemadmin(globalRole);
         globalRole = "commAdmin";
 //        Encounter encounter = new Encounter(vhistory);
 //        splitPane.setRightComponent(encounter);
@@ -248,6 +262,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnpatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpatientActionPerformed
         // TODO add your handling code here:
+        
+        
+        if(globalRole.equals(""))
+            sa = new systemadmin(globalRole);
+        
         globalRole = "patient";
         splitPane.setRightComponent(workArea);
 //        Analysis analysis = new Analysis(vhistory);
@@ -256,6 +275,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btndoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndoctorActionPerformed
         // TODO add your handling code here:
+        
+        if(globalRole.equals(""))
+            sa = new systemadmin(globalRole);
+        
         globalRole = "doctor";
         splitPane.setRightComponent(workArea);
     }//GEN-LAST:event_btndoctorActionPerformed
@@ -273,7 +296,8 @@ public class MainJFrame extends javax.swing.JFrame {
         String username = jusername.getText();
         String password = new String(jPassword.getPassword());     
         boolean flag = false;
-        systemadmin sa = new systemadmin(globalRole);
+        
+        
 
         if(username.equals("") || password.equals(""))
             JOptionPane.showMessageDialog(this, "Please enter User Name and/or Password.");
@@ -288,7 +312,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     if (globalRole.equals("commAdmin") )
                         splitPane.setRightComponent(new communityadmin(globalRole));
                     else
-                        splitPane.setRightComponent(sa);
+                            splitPane.setRightComponent(sa);
                     
                     break;
                 }
