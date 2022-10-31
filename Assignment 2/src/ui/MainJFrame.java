@@ -248,6 +248,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnpatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpatientActionPerformed
         // TODO add your handling code here:
+        globalRole = "patient";
         splitPane.setRightComponent(workArea);
 //        Analysis analysis = new Analysis(vhistory);
 //        splitPane.setRightComponent(analysis);
@@ -255,6 +256,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btndoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndoctorActionPerformed
         // TODO add your handling code here:
+        globalRole = "doctor";
         splitPane.setRightComponent(workArea);
     }//GEN-LAST:event_btndoctorActionPerformed
 
@@ -283,10 +285,10 @@ public class MainJFrame extends javax.swing.JFrame {
                 {
                     flag = true;
                     
-                    if(globalRole.equals("SystemAdmin") || globalRole.equals("hospAdmin") )
-                        splitPane.setRightComponent(sa);
-                    else if (globalRole.equals("commAdmin") )
+                    if (globalRole.equals("commAdmin") )
                         splitPane.setRightComponent(new communityadmin(globalRole));
+                    else
+                        splitPane.setRightComponent(sa);
                     
                     break;
                 }

@@ -44,6 +44,38 @@ public class systemadmin extends javax.swing.JPanel {
     public systemadmin(String globalrole) {
         initComponents();
         frame.globalRole = globalrole;
+        
+        switch(globalrole){
+            case "patient" :{
+                hospitalSysAdminBtn.setVisible(false);
+                encounterSysAdminBtn.setVisible(true);
+                patientSysAdminBtn.setVisible(false);
+                DoctorSysAdminBtn.setVisible(true);
+                break;
+            }
+            case "doctor" :{
+                hospitalSysAdminBtn.setVisible(false);
+                encounterSysAdminBtn.setVisible(true);
+                patientSysAdminBtn.setVisible(false);
+                DoctorSysAdminBtn.setVisible(true);
+                break;
+            }
+            case "SystemAdmin" :{
+                hospitalSysAdminBtn.setVisible(true);
+                encounterSysAdminBtn.setVisible(true);
+                patientSysAdminBtn.setVisible(true);
+                DoctorSysAdminBtn.setVisible(true);
+                break;
+            }
+            case "hospAdmin" :{
+                hospitalSysAdminBtn.setVisible(true);
+                encounterSysAdminBtn.setVisible(true);
+                patientSysAdminBtn.setVisible(true);
+                DoctorSysAdminBtn.setVisible(true);
+                break;
+            }
+            
+        }
     }
 
     /**
